@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix' => '/admin', 'as' => 'admin.'], function() {
+Route::resource('/krestoviny', \App\Http\Controllers\Admin\KrestovinaController::class);
+});
