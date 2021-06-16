@@ -20,6 +20,7 @@ class CreateKrestovinyTable extends Migration
             $table->string('size');
             $table->string('stopornoe_kolco');
             $table->unsignedBigInteger('total_count')->nullable();
+            $table->unsignedBigInteger('min_count')->nullable();
             $table->timestamps();
         });
     }

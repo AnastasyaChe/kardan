@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKrestoviaAnalogTable extends Migration
+class CreateKrestovinaAnalogTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKrestoviaAnalogTable extends Migration
      */
     public function up()
     {
-        Schema::create('krestovia_analog', function (Blueprint $table) {
+        Schema::create('krestovina_analog', function (Blueprint $table) {
             $table->id();
             $table->foreignId('krestovina_id')->constrained('krestoviny')->cascadeOnDelete();
             $table->foreignId('analog_id')->constrained('analog')->cascadeOnDelete();
@@ -28,6 +28,6 @@ class CreateKrestoviaAnalogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('krestovia_analog');
+        Schema::dropIfExists('krestovina_analog');
     }
 }
