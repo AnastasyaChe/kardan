@@ -16,6 +16,7 @@ class Krestovina extends Model
         'size',
         'stopornoe_kolco',
         'total_count',
+        'min_count',
     ];
     public function analog()
     {

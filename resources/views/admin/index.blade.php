@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content') 
+
 <div class="container-fluid">
 
       <!-- Page Heading -->
@@ -38,6 +39,7 @@
                                 </tr>
                             </tfoot>
                      <tbody>
+                   
                      @forelse($krestoviny as $krestovina)
                                 <tr>
                                     <td>{{$krestovina->tiporazmer}}</td>
@@ -46,13 +48,15 @@
                                     <td>{{$krestovina->stopornoe_kolco}}</td>
                                     <td>
                                     <div class="d-flex justify-content-between">
-                                    <div class="row p-3">
+                                    <div id="count_{{$krestovina->id}}" data-total_count ="{{$krestovina->total_count}}" class="row p-3">
                                     {{$krestovina->total_count}} 
                                     </div>
                                     <div class="row p-3">
-                                    <button type="button" class="btn btn-primary btn-sm " href="#">+ </button>
+                                    <a class="button-td-plus btn btn-primary btn-sm ml-3" data-krestovina_id="{{$krestovina->id}}"
+                                   > + </a>
                                     
-                                    <button type="button" class="btn btn-primary btn-sm ml-3" href="#">- </button>
+                                    <button type="button" id="minus" 
+                                    class="btn btn-primary btn-sm ml-3" > - </button>
                                     </div>
                                     </div>
                                     </td>
@@ -71,4 +75,34 @@
     </div>
 
 </div>
+    <script>
+    
+        $('.button-td-plus').click(function(e){
+                e.preventDefault();
+                let url = '';
+                let krestovinaId = $(this).data('krestovina_id');
+                console.log(krestovinaId);
+                let krestCount = $('#count_' + $(this).data('krestovina_id')).first();
+                let total = krestCount.data("total_count");
+                console.log(total);
+                url = "{{route('admin.krestovina.increment', ['krestovinaId' => 'krestovina_val'])}}";
+                total++;
+                url = url.replace('krestovina_val', krestovinaId);
+                console.log(total, url);
+                
+            $.ajax({
+                    url: url,
+                    success: function(data) {
+                        krestCount.data("total_count", total);
+                    },
+                    error: function(data)
+                {
+                    console.log('2');
+                }
+                }); 
+        
+        });
+    
+        
+    </script>
 @endsection

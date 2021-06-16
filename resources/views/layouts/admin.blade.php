@@ -14,11 +14,11 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="{{asset('assetsAdmin/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="{{asset('assetsAdmin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('assetsAdmin/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('assetsAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/sadTest.js')}}"></script>
 
 </head>
 
@@ -63,25 +63,22 @@
     </div>
     <!-- End of Page Wrapper -->
 
-    
-      
+      <!-- Custom styles for this template -->
+      <link href="{{asset('assetsAdmin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('assetsAdmin/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assetsAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
+<!-- Custom styles for this page -->
+<link href="{{asset('assetsAdmin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+  
     <!-- Core plugin JavaScript-->
     <script src="{{asset('assetsAdmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{asset('assetsAdmin/js/sb-admin-2.min.js')}}"></script>
+ 
+  
 
-    <!-- Page level plugins -->
-    <script src="{{asset('assetsAdmin/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('assetsAdmin/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="{{asset('assetsAdmin/js/demo/datatables-demo.js')}}"></script>
+    
 
 </body>
 

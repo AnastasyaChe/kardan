@@ -31,6 +31,8 @@ class KrestovinaModel extends Model
      * @var string
      */
     public $total_count;
+
+    public $min_count;
     
     public $analogs;
 

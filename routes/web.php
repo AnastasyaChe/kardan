@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\SomeController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,5 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => '/admin', 'as' => 'admin.'], function() {
 Route::resource('/krestoviny', \App\Http\Controllers\Admin\KrestovinaController::class);
+Route::get('/ajax/{krestovinaId}', [SomeController::class, 'incrementF'])->name('krestovina.increment');
 });
